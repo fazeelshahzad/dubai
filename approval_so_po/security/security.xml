@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="group_view_only_user" model="res.groups">
+        <field name="name">View Only</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting"/>
+         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+<!--    <record id="account_move_rule_group_invoice_view" model="ir.rule">-->
+<!--        <field name="name">Readonly Move View</field>-->
+<!--        <field name="model_id" ref="model_account_move"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('approval_so_po.group_view_only_user'))]"/>-->
+<!--    </record>-->
+
+</odoo>
