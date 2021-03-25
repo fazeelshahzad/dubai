@@ -8,12 +8,15 @@
                 <xpath expr="//header/button[@name='button_validate']" position="after">
                        <button string="Approve DO" groups="stock.group_stock_manager" class="oe_highlight" type="object" name="action_manager_approve" attrs="{'invisible': [('state','!=', 'manager')]}"/>
                 </xpath>
+
                 <xpath expr="//header/button[@name='action_cancel']" position="attributes">
                     <attribute name="groups">stock.group_stock_manager</attribute>
                 </xpath>
-                <xpath expr="//header/button[@name='button_scrap']" position="attributes">
-                    <attribute name="groups">stock.group_stock_manager</attribute>
-                </xpath>
+
+<!--                <xpath expr="//header/button[@name='action_draft']" position="attributes">-->
+<!--                    <attribute name="groups">point_of_sale.group_pos_manager</attribute>-->
+<!--                </xpath>-->
+
                 <xpath expr="//field[@name='user_id']" position="attributes">
                     <attribute name="attrs">{'readonly': [('state','!=', 'draft')]}</attribute>
                 </xpath>
@@ -25,9 +28,6 @@
                 </xpath>
                 <xpath expr="//field[@name='origin']" position="attributes">
                     <attribute name="attrs">{'readonly': [('state','!=', 'draft')]}</attribute>
-                </xpath>
-                <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='quantity_done']" position="attributes">
-                    <attribute name="attrs">{'readonly': [('state','in', 'manager')]}</attribute>
                 </xpath>
             </field>
         </record>
